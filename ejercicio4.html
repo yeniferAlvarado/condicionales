@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/ejercicios.css">
+    <title>Ejercicio 4</title>
+    <script>
+        function Operacion() {
+
+            opcion = parseInt(document.getElementById("opcion").value);
+            n1 = parseInt(document.getElementById("n1").value);
+            n2 = parseInt(document.getElementById("n2").value);
+            n3 = parseInt(document.getElementById("n3").value);
+            switch (opcion) {
+                case 1:
+                    promedio = (n1 + n2 + n3) / 3;
+                    document.getElementById("resultado").innerText = "Promedio de los números: " + promedio;
+                    break;
+                case 2:
+                    if (n1 > n2 && n1 > n3) {
+                        document.getElementById("resultado").innerText = "Número mayor: " + n1;
+                    } else if (n2 > n1 && n2 > n3) {
+                        document.getElementById("resultado").innerText = "Número mayor: " + n2;
+
+                    } else if (n3 > n1 && n3 > n1) {
+                        document.getElementById("resultado").innerText = "Número mayor: " + n3;
+
+                    } else {
+
+                        document.getElementById("resultado").innerText = "No hay número mayor";
+                    }
+                    break;
+                case 3:
+                    if (n1 < n2 && n1 < n3) {
+                        document.getElementById("resultado").innerText = "Número menor: " + n1;
+                    } else if (n2 < n1 && n2 < n3) {
+                        document.getElementById("resultado").innerText = "Número menor: " + n2;
+
+                    } else if (n3 < n1 && n3 < n1) {
+                        document.getElementById("resultado").innerText = "Número menor: " + n3;
+
+                    } else {
+
+                        document.getElementById("resultado").innerText = "No hay número menor";
+                    }
+                    break;
+                case 4:
+                    par = 0;
+                    impar = 0;
+                    if (n1 % 2 == 0) {
+                        par++;
+                    } else {
+                        impar++;
+                    }
+                    if (n2 % 2 == 0) {
+                        par++;
+                    } else {
+                        impar++;
+                    }
+                    if (n3 % 2 == 0) {
+                        par++;
+                    } else {
+                        impar++;
+                    }
+
+                    document.getElementById("resultado").innerText = "Pares: " + par + ", Impares: " + impar;
+
+                    break;
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="contenedor">
+        <label>Ingrese número 1</label>
+        <input type="number" id="n1"><br><br>
+        <br><label>Ingrese número 2</label>
+        <input type="number" id="n2"><br><br>
+        <br><label>Ingrese número 3</label>
+        <input type="number" id="n3"><br><br>
+        <select id="opcion">
+            <option value="1">Calcular el promedio</option>
+            <option value="2">Hallar el mayor</option>
+            <option value="3">Hallar el menor</option>
+            <option value="4">Identificar cuántos pares e impares</option>
+        </select><br><br>
+        <br>
+        <input type="button" value="Calcular" onclick="Operacion();"><br><br>
+        <span id="resultado"></span>
+    </div>
+</body>
+
+</html>

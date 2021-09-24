@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/ejercicios.css">
+    <title>Ejercicio 1</title>
+    <script>
+        function CalcularSueldo() {
+            horas = document.getElementById("horas").value;
+            if (horas <= 40) {
+                sueldo = horas * 10000;
+            } else {
+                sueldo = 40 * 10000;
+                extras = horas - 40;
+                sueldo = sueldo + (extras * 15000);
+            }
+            document.getElementById("sueldo").value = sueldo;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="contenedor">
+        <label for="horas">Ingrese número de horas trabajadas</label>
+        <input type="number" id="horas"><br><br>
+        <input type="button" value="Calcular" onclick="CalcularSueldo();"><br><br>
+        <label>Su sueldo semanal fue de:</label>
+        <input type="number" id="sueldo" readonly>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/ejercicios.css">
+    <title>Ejercicio 3</title>
+    <script>
+        function Definitiva() {
+            p1 = document.getElementById("parcial1").value;
+            p2 = document.getElementById("parcial2").value;
+            p3 = document.getElementById("parcial3").value;
+            final = document.getElementById("final").value;
+            nota_definitiva = (p1 * 0.2) + (p2 * 0.25) + (p3 * 0.3) + (final * 0.25);
+            document.getElementById("definitiva").value = nota_definitiva;
+            if (nota_definitiva >= 3) {
+                document.getElementById("resultado").innerText = "Ganó la materia de programación";
+            } else if (nota_definitiva <= 2.5) {
+                document.getElementById("resultado").innerText = "Quedó en transición ";
+            } else {
+                document.getElementById("resultado").innerText = "Perdió la materia de programación";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="contenedor">
+        <label>Ingrese nota del primer parcial</label>
+        <input type="number" id="parcial1"><br><br>
+        <label>Ingrese nota del segundo parcial</label>
+        <input type="number" id="parcial2"><br><br>
+        <label>Ingrese nota del tercer parcial</label>
+        <input type="number" id="parcial3"><br><br>
+        <label>Ingrese nota del exámen final</label>
+        <input type="number" id="final"><br><br>
+        <input type="button" value="Calcular" onclick="Definitiva();"><br><br>
+        <label>Nota definitiva</label>
+        <input type="number" id="definitiva" readonly><br><br>
+        <span id="resultado"></span>
+
+    </div>
+</body>
+
+</html>
